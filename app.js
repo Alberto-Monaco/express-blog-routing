@@ -15,6 +15,10 @@ app.use(express.json())
 const PORT = process.env.PORT
 const HOST = process.env.HOST
 
+const postsRouter = require('./routes/posts.js')
+
+app.use('/posts', postsRouter)
+
 app.listen(PORT, (req, res) => {
 	console.log(`Server is running in ${HOST}:${PORT}`)
 })
