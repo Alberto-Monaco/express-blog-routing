@@ -14,4 +14,4 @@ const show = (req, res) => {
 	res.status(200).json(post)
 }
 
-module.exports = show
+module.exports = { show }
