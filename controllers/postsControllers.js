@@ -16,12 +16,17 @@ const show = (req, res) => {
 
 const index = (req, res) => {
 	let html = '<ul>'
-	const postlist = posts.forEach((post) => {
-		html += `<li>${post.title}</li>`
+	posts.forEach((post) => {
+		html += `
+		<li>
+			<h2>${post.title}</h2>
+            <img src="/imgs/posts/${post.image}" alt="${post.title}">
+            <p>${post.content}</p>           
+            ${post.tags.join(', ')}
+		</li>
+		`
 	})
-
 	html += '</ul>'
-
 	res.send(html)
 }
 
