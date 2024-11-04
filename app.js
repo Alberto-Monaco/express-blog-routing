@@ -9,3 +9,12 @@ ritornerà un json con i dati del post
 Scrivere tutte le funzioni delle rotte nel controller dedicato
 Registrare il router dentro app.js con il prefisso posts/.
 */
+const express = require('express')
+const app = express()
+app.use(express.json())
+const PORT = process.env.PORT
+const HOST = process.env.HOST
+
+app.listen(PORT, (req, res) => {
+	console.log(`Server is running in ${HOST}:${PORT}`)
+})
