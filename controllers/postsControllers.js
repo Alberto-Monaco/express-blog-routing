@@ -14,4 +14,15 @@ const show = (req, res) => {
 	res.status(200).json(post)
 }
 
-module.exports = { show }
+const index = (req, res) => {
+	let html = '<ul>'
+	const postlist = posts.forEach((post) => {
+		html += `<li>${post.title}</li>`
+	})
+
+	html += '</ul>'
+
+	res.send(html)
+}
+
+module.exports = { show, index }
